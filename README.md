@@ -6,7 +6,7 @@ For usage, see [Normal Use](#normal-use).
 
 Disclaimer: most of the code for this project was AI generated.
 
-<img src="media/gulp.png" />
+<img src="media/gulp.png" style="max-width:300px" />
 
 ## Build
 
