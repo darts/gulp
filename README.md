@@ -2,24 +2,27 @@
 
 `gulp` is a device designed to tell you how much of your beverage you've consumed, and how quickly. Regardless of if you're drinking water or poitín - you can now track _exactly_ how much you've had.
 
-For usage, see [Normal Use]().
+For usage, see [Normal Use](#normal-use).
 
 Disclaimer: most of the code for this project was AI generated.
 
 ## Build
 
+A picture tells a thousand words. Unfortunately, the assembly was extremely rushed so there are few in these instructions.
+
 ### Required Hardware
 
-<!-- TODO: add links to recommended hardware where relevant -->
+The provided links are examples that should probably work.
 
 #### Electronics
 
-- ESP32 TTGO T-Display (ST7789 135x240 TFT)
-- HX711 load cell amplifier & load cell
-- LiPo battery with JST connector (TODO: find specific connector)
-- Two push buttons (TODO: find dimensions)
-- Male & Female USB-C breakout boards (female board should have CC1 resistors for power)
-- Some wires (find gauge)
+- ESP32 TTGO T-Display (ST7789 135x240 TFT) \[[link](https://aliexpress.com/item/33050639690.html)\]
+- HX711 load cell amplifier & load cell \[[link](https://aliexpress.com/item/1005001537354199.html)\]
+- LiPo battery with JST 1.25 connector \[[link](https://www.amazon.de/-/en/gp/product/B0F18ST3K5)\]
+- Two momentary push buttons w/ 16mm body width \[[link](https://aliexpress.com/item/1005003400929705.html)\]
+- Male USB-C breakout board \[[link](https://aliexpress.com/item/1005009847773743.html)\]
+- Female Vertical USB-C breakout board \[[link](https://aliexpress.com/item/1005009011843269.html)\]
+- 0.25mx^2^ wire (24 AWG)
 
 #### Misc Components
 
@@ -28,9 +31,9 @@ Disclaimer: most of the code for this project was AI generated.
   - 2 M5 * 25mm DIN912 bolts
   - 6 M3 * 10mm DIN912 bolts
 - Inserts:
-  - 6 Heatset M3 inserts
+  - 6 Heatset M3 inserts \[[link](https://cnckitchen.store/products/heat-set-insert-m3-x-5-7-100-pieces)\]
 - 3D printing:
-    - ~X grams of filament (I used PLA)
+    - ~120 grams of filament (I used PLA)
     - Access to a 3D printer (I used a Prusa MK4)
 
 #### Tools
@@ -43,28 +46,28 @@ Disclaimer: most of the code for this project was AI generated.
 
 ### Assembly
 
-<!-- TODO: 3mf of assembly and individual files -->
-
 #### Setup
 
-**Printed Parts:**
-1. Print parts in [cad](cad). I recommend printing at least the mounting locations with 5 perimeters.
+**Printed Parts**
+1. Print parts in [cad/stl](cad/stl). I recommend printing at least the mounting locations with 5 perimeters.
 2. Insert the heatset inserts.
 
-**Devboard Prep:**
+**Devboard Prep**
 1. Use some isopropanol to loosen the adhesive connecting the screen to the ESP32 and gently move it up.
 2. The adhesive will become sticky again once the isopropanol evaporates so cover the board with a bit of kapton tape to prevent sticking.
 
-**Wiring:**
-1. Solder the Load Cell to the HX711 and the HX711 to the ESP32 according to the [wiring table]() below.
-2. Connect the buttons to the ESP32 according to the [wiring table](). You will need to disconnect them later.
+**Wiring**
+1. Solder the Load Cell to the HX711 and the HX711 to the ESP32 according to the [wiring table](#wiring) below.
+2. Connect the buttons to the ESP32 according to the [wiring table](#wiring). You will need to disconnect them later.
 
-**USB-C Extension:**
+**USB-C Extension**
 1. Connect the male and female usb breakout boards as shown to create the extension cable.
 
 #### Test
 
-1. Follow the instructions for [Firmware] up to and including [Calibration] 3, then continue. We want to ensure all of the components work but not to calibrate the scale at this stage.
+This step is optional but _highly_ recommended.
+
+1. Follow the instructions for [Firmware](#firmware) up to and including [Calibration](#calibration) 3, then continue. We want to ensure all of the components work but not to calibrate the scale at this stage.
 2. Disconnect the buttons from the ESP32.
 
 #### Build
@@ -72,7 +75,7 @@ Disclaimer: most of the code for this project was AI generated.
 1. Insert the buttons into the top cover and fasten them with the included nuts.
 2. Fasten the load cell to the base with the M5 bolts.
 3. Fasten the female end of the usb extension to the base using M3 bolts.
-4. Solder the buttons to the ESP32 according to the wiring diagram.
+4. Solder the buttons to the ESP32 according to the wiring table.
 5. Plug the battery in to the ESP32.
 6. Plug the male end of the usb extension into the ESP32.
 7. Test the setup again.
@@ -81,20 +84,22 @@ Disclaimer: most of the code for this project was AI generated.
 10. Place the cover on the base.
 11. Secure the cover with the M3 bolts.
 12. Fasten the scale to the load cell using the M4 bolts.
-13. Follow the instructions for [Build and Flash] and [Calibration] below.
+13. Follow the instructions for [Build and Flash](#build-and-flash) and [Calibration](#calibration) below.
 
 #### Wiring
 
 | Signal | MCU Pin |
 |--------|------|
+| Load Cell Red | HX711 E+ |
+| Load Cell Black | HX711 E- |
+| Load Cell White | HX711 A- |
+| Load Cell Green | HX711 A+ |
 | HX711 data | GPIO 26 |
 | HX711 clock | GPIO 27 |
 | HX711 PWR | 5v |
 | HX711 GND | GND |
 | Button 1 | GPIO 32 & GND |
 | Button 2 | GPIO 33 & GND |
-
-<!-- TODO add wiring diagram -->
 
 ### Firmware
 
