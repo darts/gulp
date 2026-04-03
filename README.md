@@ -24,7 +24,7 @@ The provided links are examples that should probably work.
 - Two momentary push buttons w/ 16mm body width \[[link](https://aliexpress.com/item/1005003400929705.html)\]
 - Male USB-C breakout board \[[link](https://aliexpress.com/item/1005009847773743.html)\]
 - Female Vertical USB-C breakout board \[[link](https://aliexpress.com/item/1005009011843269.html)\]
-- 0.25mm^2^ wire (24 AWG)
+- 0.25mm<sup>2</sup> wire (24 AWG)
 
 #### Misc Components
 
