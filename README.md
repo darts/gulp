@@ -6,6 +6,8 @@ For usage, see [Normal Use](#normal-use).
 
 Disclaimer: most of the code for this project was AI generated.
 
+<img src="media/gulp.png" />
+
 ## Build
 
 A picture tells a thousand words. Unfortunately, the assembly was extremely rushed so there are few in these instructions.
@@ -22,7 +24,7 @@ The provided links are examples that should probably work.
 - Two momentary push buttons w/ 16mm body width \[[link](https://aliexpress.com/item/1005003400929705.html)\]
 - Male USB-C breakout board \[[link](https://aliexpress.com/item/1005009847773743.html)\]
 - Female Vertical USB-C breakout board \[[link](https://aliexpress.com/item/1005009011843269.html)\]
-- 0.25mx^2^ wire (24 AWG)
+- 0.25mm^2^ wire (24 AWG)
 
 #### Misc Components
 
@@ -41,7 +43,7 @@ The provided links are examples that should probably work.
 - Soldering iron & solder
 - Hex key set
 - Isopropanol
-- Kapton tape
+- Kapton tape (or similar)
 - Hot glue (optional but recommended)
 
 ### Assembly
