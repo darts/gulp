@@ -10,7 +10,7 @@ Disclaimer: most of the code for this project was AI generated.
 
 ## Build
 
-A picture tells a thousand words. Unfortunately, the assembly was extremely rushed so there are few in these instructions.
+A picture tells a thousand words. Unfortunately, the assembly was extremely rushed so there are none in these instructions.
 
 ### Required Hardware
 
