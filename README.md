@@ -65,14 +65,16 @@ The provided links are examples that should probably work.
 **USB-C Extension**
 1. Connect the male and female usb breakout boards as shown to create the extension cable.
 
-#### Test
+   
+#### Test
 
 This step is optional but _highly_ recommended.
 
 1. Follow the instructions for [Firmware](#firmware) up to and including [Calibration](#calibration) 3, then continue. We want to ensure all of the components work but not to calibrate the scale at this stage.
 2. Disconnect the buttons from the ESP32.
 
-#### Build
+   
+#### Build
 
 1. Insert the buttons into the top cover and fasten them with the included nuts.
 2. Fasten the load cell to the base with the M5 bolts.
